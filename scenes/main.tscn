@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=3 format=1]
 
-[ext_resource path="res://scripts/spaceship.gd" type="Script" id=1]
+[ext_resource path="res://scripts/arena.gd" type="Script" id=1]
 [ext_resource path="res://sprites/Backgrounds/black.png" type="Texture" id=2]
-[ext_resource path="res://sprites/spaceship.png" type="Texture" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
 
 [node name="arena" type="Node2D"]
 
@@ -15,7 +9,7 @@ script/script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 146.851, 261.851 )
+transform/pos = Vector2( 145.344, 266.373 )
 transform/scale = Vector2( 1.21094, 2.03125 )
 texture = ExtResource( 2 )
 
@@ -25,30 +19,6 @@ process_mode = 0
 wait_time = 1.0
 one_shot = false
 autostart = true
-
-[node name="spaceship" type="KinematicBody2D" parent="." groups=[ "spaceship" ]]
-
-transform/pos = Vector2( 150.734, 476.059 )
-input/pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 2.57282, 0, 0, 1.94799, -0.017909, 1.76474 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-collision/margin = 0.08
-
-[node name="sprite" type="Sprite" parent="spaceship"]
-
-transform/scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spaceship"]
-
-transform/pos = Vector2( -0.017909, 1.76474 )
-transform/scale = Vector2( 2.57282, 1.94799 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
 
 [node name="score" type="Label" parent="."]
 
